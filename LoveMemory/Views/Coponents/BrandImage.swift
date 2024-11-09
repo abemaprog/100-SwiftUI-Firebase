@@ -7,12 +7,30 @@
 
 import SwiftUI
 
+enum BrandImageSize: CGFloat {
+    case small = 32
+    case middle = 80
+    case large = 120
+}
+
 struct BrandImage: View {
+    
+    let size: BrandImageSize
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            // ハートのアイコン
+            Image(systemName: "heart.fill")
+                .resizable()
+                .frame(width: 120, height: 120)
+                .foregroundStyle(.pink)
+            
+        }
+        
     }
 }
 
 #Preview {
-    BrandImage()
+    BrandImage(size: .middle)
 }

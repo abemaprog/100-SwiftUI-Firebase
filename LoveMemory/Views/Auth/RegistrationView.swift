@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegistrartionView: View {
+struct RegistrationView: View {
     
     @State var text = ""
     @State private var email = ""
@@ -16,30 +16,36 @@ struct RegistrartionView: View {
     @FocusState var isFocused: Bool
     
     var body: some View {
-        VStack(spacing: 30) {
-            BrandImage(size: .large)
-                .padding(.vertical, 10)
-            
-            Text("- 大切な時間を思い出に -")
-                .font(.title2)
-                .padding(.bottom, 32)
-            
-            InputField(text: $email, label: "メールアドレス", placeholder: "メールアドレスを入力してください")
-            InputField(text: $password, label: "パスワード", placeholder: "半角英数字6文字以上", isSecureField: true)
-            InputField(text: $password, label: "パスワード（確認用）", placeholder: "パスワードをもう一度入力してください", isSecureField: true)
-            
-            Button {
+        NavigationStack {
+            VStack(spacing: 30) {
+                BrandImage(size: .large)
+                    .padding(.vertical, 10)
                 
-            } label: {
-                HStack {
-                    Text("")
+                Text("- 大切な時間を思い出に -")
+                    .font(.title2)
+                    .padding(.bottom, 32)
+                
+                InputField(text: $email, label: "メールアドレス", placeholder: "メールアドレスを入力してください")
+                InputField(text: $password, label: "パスワード", placeholder: "半角英数字6文字以上", isSecureField: true)
+                InputField(text: $password, label: "パスワード（確認用）", placeholder: "パスワードをもう一度入力してください", isSecureField: true)
+                
+                NavigationLink {
+                    
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.right.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundStyle(.pink)
+                    }
                 }
             }
-            
+            .padding(.horizontal)
+            .dismissKeyboardOnTap()
         }
     }
 }
 
 #Preview {
-    RegistrartionView()
+    RegistrationView()
 }
