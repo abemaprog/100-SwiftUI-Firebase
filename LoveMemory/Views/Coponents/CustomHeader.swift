@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct CustomHeader: View {
+    
+    let title: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(title)
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundStyle(Color.primary)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color("Pink"))
+        }
     }
 }
 
 #Preview {
-    CustomHeader()
+    CustomHeader(title: "カスタムヘッダー")
 }

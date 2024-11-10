@@ -10,7 +10,7 @@ import SwiftUI
 enum BrandImageSize: CGFloat {
     case small = 32
     case middle = 80
-    case large = 120
+    case large = 200
 }
 
 struct BrandImage: View {
@@ -21,12 +21,11 @@ struct BrandImage: View {
         
         VStack {
             // ハートのアイコン
-            Image(systemName: "heart.fill")
+            Image("brandImage")
                 .resizable()
-                .frame(width: 120, height: 120)
                 .foregroundStyle(.pink)
-            
         }
+        .frame(width: size.rawValue, height: size.rawValue)
         
     }
 }

@@ -10,42 +10,55 @@ import SwiftUI
 struct RegistrationView: View {
     
     @State var text = ""
+    @State private var name = ""
     @State private var email = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
     
+    @Environment(\.dismiss) var dismiss
     @FocusState var isFocused: Bool
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 30) {
-                BrandImage(size: .large)
-                    .padding(.vertical, 10)
-                
-                Text("- 大切な時間を思い出に -")
-                    .font(.title2)
-                    .padding(.bottom, 32)
-                
+        
+        VStack(spacing: 24) {
+            // ヘッダー
+            CustomHeader(title: "登録する")
+            
+            VStack(spacing: 24) {
+                // 名前
+                InputField(text: $name, label: "お名前", placeholder: "お名前を入力してください（いつでも変更できます）")
+                // メールアドレス
                 InputField(text: $email, label: "メールアドレス", placeholder: "メールアドレスを入力してください")
+                // パスワード
                 InputField(text: $password, label: "パスワード", placeholder: "半角英数字6文字以上", isSecureField: true)
-                InputField(text: $password, label: "パスワード（確認用）", placeholder: "パスワードをもう一度入力してください", isSecureField: true)
+                // パスワード確認用
+                InputField(text: $confirmPassword, label: "パスワード（確認用）", placeholder: "パスワードをもう一度入力してください", isSecureField: true)
+                // 登録ボタン
+                BasicButton(label: "登録", icon: "arrow.right")
+                    .padding(.top, 24)
                 
-                NavigationLink {
-                    
+                Spacer()
+                
+                Button {
+                    dismiss()
                 } label: {
                     HStack {
-                        Image(systemName: "arrow.right.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundStyle(.pink)
+                        Text("すでにアカウントをお持ちの方")
+                        Text("ログイン")
+                            .fontWeight(.bold)
                     }
+                    .foregroundStyle(Color.primary)
                 }
             }
             .padding(.horizontal)
-            .dismissKeyboardOnTap()
         }
+        .frame(maxHeight: .infinity, alignment: .top)
+        .dismissKeyboardOnTap()
     }
+    
 }
 
 #Preview {
     RegistrationView()
 }
+

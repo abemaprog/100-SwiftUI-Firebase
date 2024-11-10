@@ -10,14 +10,29 @@ import SwiftUI
 struct BasicButton: View {
     
     let label: String
-    let icon: String? = nil
+    var icon: String? = nil
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            
+        } label: {
+            HStack {
+                Text(label)
+                if let name = icon {
+                    Image(systemName: name)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 16)
+            .fontWeight(.bold)
+            .foregroundStyle(.black)
+            .background(Color("Pink"))
+            .clipShape(Capsule())
+        }
     }
 }
 
-//#Preview {
-//    BasicButton()
-//}
+#Preview {
+    BasicButton(label: "ボタン")
+}
