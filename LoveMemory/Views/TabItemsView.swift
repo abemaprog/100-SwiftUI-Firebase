@@ -7,10 +7,15 @@
 
 import SwiftUI
 
-struct TabItemView: View {
+struct TabItemsView: View {
     var body: some View {
         TabView {
             HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            FriendView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
@@ -21,5 +26,5 @@ struct TabItemView: View {
 }
 
 #Preview {
-    TabItemView()
+    TabItemsView()
 }

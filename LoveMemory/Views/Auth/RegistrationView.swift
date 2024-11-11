@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    @EnvironmentObject var authViewModel: AuthViewModel
+    private var authViewModel = AuthViewModel()
     
     @State var text = ""
     @State private var name = ""
@@ -39,8 +39,7 @@ struct RegistrationView: View {
                     Task {
                         await authViewModel.createAccount(
                             email: email,
-                            password: password,
-                            name: name
+                            password: password
                          )
                     }
                 }

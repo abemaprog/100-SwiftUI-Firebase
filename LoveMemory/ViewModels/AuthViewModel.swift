@@ -8,11 +8,43 @@
 import SwiftUI
 import FirebaseAuth
 
-class AuthViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User?
+class AuthViewModel {
+    
+    var userSession: FirebaseAuth.User?
+    
+    // ユーザーがログインしているかどうかを確認する処理
+    init() {
+        self.userSession = Auth.auth().currentUser
+        print("ログインユーザー: \(self.userSession?.email)")
+        
+        // ログアウト機能のテスト
+        // logout()
+        
+    }
+    
+    // ログイン
+    func login(email: String, password: String) async {
+        do {
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            print("ログイン成功: \(result.user.email)")
+        }catch {
+            print("ログイン失敗: \(error.localizedDescription)")
+        }
+    }
+    
+    //ログアウト
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            print("ログアウト成功")
+        } catch {
+            print("ログアウト失敗: \(error.localizedDescription)")
+        }
+        
+    }
     
     // アカウント作成
-    func createAccount(email: String, password: String, name: String) async{
+    func createAccount(email: String, password: String) async{
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             print("アカウント登録成功: \(result.user.email)")
@@ -24,3 +56,4 @@ class AuthViewModel: ObservableObject {
         
     }
 }
+
