@@ -22,11 +22,12 @@ struct LoginView: View {
                     // メールアドレス
                     InputField(text: $email, label: "メールアドレス", placeholder: "メールアドレスを入力してください")
                     // パスワード
-                    InputField(text: $password, label: "パスワード", placeholder: "半角英数字6文字以上", isSecureField: true)
-                    
-                    // ログインボタン
-                    BasicButton(label: "ログイン", icon: "arrow.right")
-                        .padding(.top, 24)
+                    InputField(text: $password, label: "パスワード", placeholder: "パスワードを入力してください", isSecureField: true)
+                    // 登録ボタン
+                    BasicButton(label: "ログイン", icon: "arrow.right") {
+                        
+                    }
+                    .padding(.top, 24)
                     
                     Spacer()
                     
@@ -44,7 +45,9 @@ struct LoginView: View {
                 }
                 .padding(.horizontal)
             }
+            .dismissKeyboardOnTap()
         }
+        
     }
 }
 

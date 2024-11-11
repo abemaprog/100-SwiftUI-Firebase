@@ -11,11 +11,12 @@ struct BasicButton: View {
     
     let label: String
     var icon: String? = nil
+    let action: () -> Void // クロージャーを返すようにする
     
     
     var body: some View {
         Button {
-            
+            action()
         } label: {
             HStack {
                 Text(label)
@@ -34,5 +35,7 @@ struct BasicButton: View {
 }
 
 #Preview {
-    BasicButton(label: "ボタン")
+    BasicButton(label: "ボタン") {
+        print("ボタンがタップされました")
+    }
 }

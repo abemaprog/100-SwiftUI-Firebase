@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegistrationView: View {
     
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     @State var text = ""
     @State private var name = ""
     @State private var email = ""
@@ -19,7 +21,6 @@ struct RegistrationView: View {
     @FocusState var isFocused: Bool
     
     var body: some View {
-        
         VStack(spacing: 24) {
             // ヘッダー
             CustomHeader(title: "登録する")
@@ -34,8 +35,16 @@ struct RegistrationView: View {
                 // パスワード確認用
                 InputField(text: $confirmPassword, label: "パスワード（確認用）", placeholder: "パスワードをもう一度入力してください", isSecureField: true)
                 // 登録ボタン
-                BasicButton(label: "登録", icon: "arrow.right")
-                    .padding(.top, 24)
+                BasicButton(label: "登録", icon: "arrow.right") {
+                    Task {
+                        await authViewModel.createAccount(
+                            email: email,
+                            password: password,
+                            name: name
+                         )
+                    }
+                }
+                .padding(.top, 24)
                 
                 Spacer()
                 
@@ -52,7 +61,6 @@ struct RegistrationView: View {
             }
             .padding(.horizontal)
         }
-        .frame(maxHeight: .infinity, alignment: .top)
         .dismissKeyboardOnTap()
     }
     
