@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //監視対象のオブジェクトから通知があった際に自身のViewを再描画
+    @ObservedObject var authViewModel = AuthViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        // Group: 複数のViewをグループ化して配置する
+        Group {
+            if authViewModel.userSession != nil {
+                TabItemsView()
+            } else {
+                LoginView(authViewModel: authViewModel)
+            }
+            
         }
-        .padding()
     }
 }
 

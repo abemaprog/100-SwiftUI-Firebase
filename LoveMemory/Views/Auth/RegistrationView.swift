@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    private var authViewModel = AuthViewModel()
+    let authViewModel: AuthViewModel
     
     @State var text = ""
     @State private var name = ""
@@ -66,6 +66,6 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    RegistrationView(authViewModel: AuthViewModel())
 }
 

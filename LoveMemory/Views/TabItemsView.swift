@@ -1,5 +1,5 @@
 //
-//  TabView.swift
+//  TabItemsView.swift
 //  LoveMemory
 //
 //  Created by Manato Abe on 2024/11/11.
@@ -20,7 +20,6 @@ struct TabItemsView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-            
         }
     }
 }

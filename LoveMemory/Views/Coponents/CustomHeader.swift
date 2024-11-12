@@ -19,7 +19,7 @@ struct CustomHeader: View {
                 .foregroundStyle(Color.primary)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color("Pink"))
+                .background(Color("CustomGray"))
         }
     }
 }

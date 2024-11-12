@@ -28,7 +28,7 @@ struct BasicButton: View {
             .padding(.vertical, 16)
             .fontWeight(.bold)
             .foregroundStyle(.black)
-            .background(Color("Pink"))
+            .background(Color("CustomGray"))
             .clipShape(Capsule())
         }
     }

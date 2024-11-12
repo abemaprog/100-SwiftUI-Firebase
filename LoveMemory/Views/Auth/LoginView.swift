@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LoginView: View {
-    private var authViewModel = AuthViewModel()
+    let authViewModel: AuthViewModel
     
     @State private var email = ""
     @State private var password = ""
+    
+    @State private var isLogin = false
     
     var body: some View {
         NavigationStack {
@@ -24,18 +26,26 @@ struct LoginView: View {
                     InputField(text: $email, label: "メールアドレス", placeholder: "メールアドレスを入力してください")
                     // パスワード
                     InputField(text: $password, label: "パスワード", placeholder: "パスワードを入力してください", isSecureField: true)
-                    // 登録ボタン
-                    BasicButton(label: "ログイン", icon: "arrow.right") {
-                        Task {
-                            await authViewModel.login(email: email, password: password)
+                    // ログインボタン
+                    if isLogin {
+                        ProgressView()
+                            .frame(width: 48, height: 48)
+                    } else {
+                        BasicButton(label: "ログイン", icon: "arrow.right") {
+                            Task {
+                                isLogin = true
+                                defer { isLogin = false }
+                                
+                                await authViewModel.login(email: email, password: password)
+                            }
                         }
+                        .padding(.top, 24)
                     }
-                    .padding(.top, 24)
                     
                     Spacer()
                     
                     NavigationLink {
-                        RegistrationView()
+                        RegistrationView(authViewModel: authViewModel)
                             .navigationBarBackButtonHidden()
                     } label: {
                         HStack {
@@ -55,5 +65,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(authViewModel: AuthViewModel())
 }
