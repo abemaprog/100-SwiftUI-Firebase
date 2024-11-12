@@ -23,7 +23,7 @@ struct RegistrationView: View {
     var body: some View {
         VStack(spacing: 24) {
             // ヘッダー
-            CustomHeader(title: "登録する")
+            CustomHeader(title: "登録する", icon: nil, destination: nil)
             
             VStack(spacing: 24) {
                 // 名前

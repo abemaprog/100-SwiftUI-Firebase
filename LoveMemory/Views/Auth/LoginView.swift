@@ -19,7 +19,7 @@ struct LoginView: View {
         NavigationStack {
             VStack(spacing: 24) {
                 // ヘッダー
-                CustomHeader(title: "ログインする")
+                CustomHeader(title: "ログインする", icon: nil, destination: nil)
                 
                 VStack(spacing: 24) {
                     // メールアドレス

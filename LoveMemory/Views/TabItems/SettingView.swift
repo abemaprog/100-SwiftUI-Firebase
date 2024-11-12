@@ -1,18 +1,18 @@
 //
-//  HomeView.swift
+//  SettingView.swift
 //  LoveMemory
 //
-//  Created by Manato Abe on 2024/11/07.
+//  Created by Manato Abe on 2024/11/12.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct SettingView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    HomeView()
+    SettingView()
 }

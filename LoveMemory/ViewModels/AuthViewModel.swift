@@ -18,7 +18,7 @@ class AuthViewModel: ObservableObject {
         print("ログインユーザー: \(self.userSession?.email)")
         
         // ログアウト機能のテスト
-        logout()
+        //logout()
         
     }
     

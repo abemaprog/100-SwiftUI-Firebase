@@ -10,15 +10,20 @@ import SwiftUI
 struct TabItemsView: View {
     var body: some View {
         TabView {
-            HomeView()
+            ListView()
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    Image(systemName: "list.bullet.clipboard")
+                    Text("リスト")
                 }
             FriendView()
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    Image(systemName: "person.2.fill")
+                    Text("友達")
+                }
+            SettingView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("設定")
                 }
         }
     }

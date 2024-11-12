@@ -1,29 +1,43 @@
-//
-//  CustomHeader.swift
-//  LoveMemory
-//
-//  Created by Manato Abe on 2024/11/10.
-//
-
 import SwiftUI
 
 struct CustomHeader: View {
     
     let title: String
+    let icon: Image?
+    let destination: AnyView?
+    //let action: (() -> Void)?
     
     var body: some View {
-        VStack {
-            Text(title)
-                .font(.title3)
-                .fontWeight(.bold)
-                .foregroundStyle(Color.primary)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color("CustomGray"))
+        ZStack {
+            HStack {
+                Text(title)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.primary)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color("CustomGray"))
+            }
+            HStack {
+                Spacer()
+                if let icon = icon, let destination = destination {
+                    NavigationLink(destination: destination) {
+                        icon
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25) // アイコンのサイズ
+                            .foregroundStyle(Color.primary)
+                            .padding(.horizontal)
+                    }
+                }
+            }
         }
     }
 }
 
 #Preview {
-    CustomHeader(title: "カスタムヘッダー")
+    VStack {
+        CustomHeader(title: "カスタムヘッダー", icon: Image(systemName: "person.circle"), destination: AnyView(MyPageView()))
+        CustomHeader(title: "カスタムヘッダー", icon: nil, destination: nil)
+    }
 }
