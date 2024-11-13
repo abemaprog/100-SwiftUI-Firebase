@@ -6,13 +6,65 @@
 //
 
 import SwiftUI
+import WebUI //https://github.com/cybozu/webui#readme
 
 struct SettingView: View {
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 24) {
+            // カスタムヘッダー
+            CustomHeader(title: "設定", icon: nil, destination: nil)
+            
+            List {
+                // ユーザー情報
+                userInfo
+                // アプリ情報
+                Section("アプリ情報") {
+                    MyPageSectionView(iconname: "info.circle.fill", iconColor: .green, title: "バージョン", subtitle: "\(appVersion)")
+                    //　プライバシーポリシー
+                    WebSectionView(iconname: "shield.fill", iconColor: .purple, title: "プライバシーポリシー", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
+                    
+                }
+            }
+            
+        }
+        .background(Color(.systemGray6)) //リストのグレーと同じカラー
     }
 }
 
 #Preview {
     SettingView()
+}
+
+extension SettingView {
+    private var userInfo: some View {
+        Section("ユーザー情報") {
+            HStack(spacing: 20) {
+                Image("Me")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 48, height: 48)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("アベ")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    
+                    Text("@abe00")
+                        .font(.footnote)
+                        .tint(.gray)
+                }
+            }
+        }
+    }
+    
+    
+    private var appVersion: String {
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            return "\(version)"
+        }
+        return "情報が取得できません"
+    }
 }

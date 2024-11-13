@@ -39,7 +39,8 @@ struct RegistrationView: View {
                     Task {
                         await authViewModel.createAccount(
                             email: email,
-                            password: password
+                            password: password,
+                            name: name
                          )
                     }
                 }

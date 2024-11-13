@@ -27,6 +27,9 @@
 		15E948512CE30F7200B1D84B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948442CE30F7200B1D84B /* ContentView.swift */; };
 		15E948522CE30F7200B1D84B /* TabItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948452CE30F7200B1D84B /* TabItemsView.swift */; };
 		15E948552CE3116800B1D84B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948542CE3116800B1D84B /* SettingView.swift */; };
+		15E948572CE49BA300B1D84B /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948562CE49BA300B1D84B /* MyPageSection.swift */; };
+		15E9489E2CE4E11F00B1D84B /* WebUI in Frameworks */ = {isa = PBXBuildFile; productRef = 15E9489D2CE4E11F00B1D84B /* WebUI */; };
+		15E948A02CE4E3FD00B1D84B /* WebSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,8 @@
 		15E948442CE30F7200B1D84B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		15E948452CE30F7200B1D84B /* TabItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemsView.swift; sourceTree = "<group>"; };
 		15E948542CE3116800B1D84B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		15E948562CE49BA300B1D84B /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
+		15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E9489E2CE4E11F00B1D84B /* WebUI in Frameworks */,
 				15E947C02CDF12F300B1D84B /* FirebaseDatabase in Frameworks */,
 				15E947C42CDF12F300B1D84B /* FirebaseStorage in Frameworks */,
 				15E947BE2CDF12F300B1D84B /* FirebaseAuth in Frameworks */,
@@ -137,6 +143,8 @@
 				15E9483C2CE30F7200B1D84B /* CustomHeader.swift */,
 				15E9483D2CE30F7200B1D84B /* InputField.swift */,
 				15E9483E2CE30F7200B1D84B /* KeyboardDismissModifier.swift */,
+				15E948562CE49BA300B1D84B /* MyPageSection.swift */,
+				15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */,
 			);
 			path = Coponents;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 				15E947BF2CDF12F300B1D84B /* FirebaseDatabase */,
 				15E947C12CDF12F300B1D84B /* FirebaseFirestore */,
 				15E947C32CDF12F300B1D84B /* FirebaseStorage */,
+				15E9489D2CE4E11F00B1D84B /* WebUI */,
 			);
 			productName = LoveMemory;
 			productReference = 15E9463F2CDCE26D00B1D84B /* LoveMemory.app */;
@@ -221,6 +230,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				15E947BC2CDF12F300B1D84B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				15E9489C2CE4E11F00B1D84B /* XCRemoteSwiftPackageReference "WebUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 15E946402CDCE26D00B1D84B /* Products */;
@@ -250,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E948572CE49BA300B1D84B /* MyPageSection.swift in Sources */,
 				15E948472CE30F7200B1D84B /* LoginView.swift in Sources */,
 				15E948482CE30F7200B1D84B /* RegistrationView.swift in Sources */,
 				15E948492CE30F7200B1D84B /* BasicButton.swift in Sources */,
@@ -261,6 +272,7 @@
 				15E9484E2CE30F7200B1D84B /* FriendView.swift in Sources */,
 				15E9484F2CE30F7200B1D84B /* ListView.swift in Sources */,
 				15E948512CE30F7200B1D84B /* ContentView.swift in Sources */,
+				15E948A02CE4E3FD00B1D84B /* WebSectionView.swift in Sources */,
 				15E948522CE30F7200B1D84B /* TabItemsView.swift in Sources */,
 				15E946592CDCE27800B1D84B /* LoveMemoryApp.swift in Sources */,
 			);
@@ -480,6 +492,14 @@
 				minimumVersion = 11.4.0;
 			};
 		};
+		15E9489C2CE4E11F00B1D84B /* XCRemoteSwiftPackageReference "WebUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cybozu/WebUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -502,6 +522,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 15E947BC2CDF12F300B1D84B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		15E9489D2CE4E11F00B1D84B /* WebUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E9489C2CE4E11F00B1D84B /* XCRemoteSwiftPackageReference "WebUI" */;
+			productName = WebUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

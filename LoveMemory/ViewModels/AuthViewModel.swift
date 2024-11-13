@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
 
 class AuthViewModel: ObservableObject {
     
@@ -17,9 +18,8 @@ class AuthViewModel: ObservableObject {
         self.userSession = Auth.auth().currentUser
         print("ログインユーザー: \(self.userSession?.email)")
         
-        // ログアウト機能のテスト
-        //logout()
         
+        //logout()
     }
     
     // ログイン
@@ -48,16 +48,33 @@ class AuthViewModel: ObservableObject {
     }
     
     // アカウント作成
-    func createAccount(email: String, password: String) async{
+    @MainActor
+    func createAccount(email: String, password: String, name: String) async{
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             print("アカウント登録成功: \(result.user.email)")
             self.userSession = result.user
+            
+            let newUser = User(id: result.user.uid, name: name, email: email)
+            await uploadUserData(withUser: newUser)
         } catch {
             print("アカウント登録失敗: \(error.localizedDescription)") // エラー内容を文字列で受け取る
             
         }
         print("crateAcountメソッドが呼ばれました")
+        
+    }
+    
+    // ユーザーデータのアップロード
+    private func uploadUserData(withUser user: User) async {
+        do {
+            let userData = try Firestore.Encoder().encode(user) //setDataはString : Any型でなくてはならないため
+            await try Firestore.firestore().collection("user").document(user.id).setData(userData)
+            print("データ保存成功")
+        } catch {
+            print("データ保存失敗: \(error.localizedDescription)")
+        }
+        
         
     }
 }
