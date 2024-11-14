@@ -21,13 +21,32 @@ struct SettingView: View {
                 userInfo
                 // アプリ情報
                 Section("アプリ情報") {
+                    // バージョン
                     MyPageSectionView(iconname: "info.circle.fill", iconColor: .green, title: "バージョン", subtitle: "\(appVersion)")
                     //　プライバシーポリシー
                     WebSectionView(iconname: "shield.fill", iconColor: .purple, title: "プライバシーポリシー", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
+                    // 利用規約
+                    WebSectionView(iconname: "doc.text.fill", iconColor: .gray, title: "利用規約", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
+                }
+                // アカウント
+                Section("アカウント") {
+                    // ログアウト
+                    Button {
+                        
+                    } label: {
+                        MyPageSectionView(iconname: "arrow.left.circle.fill", iconColor: .red, title: "ログアウト", subtitle: nil)
+                    }
+
                     
+                    // アカウント削除
+                    Button {
+                        //
+                    } label: {
+                        MyPageSectionView(iconname: "xmark.circle.fill", iconColor: .red, title: "アカウント削除", subtitle: nil)
+                    }
+
                 }
             }
-            
         }
         .background(Color(.systemGray6)) //リストのグレーと同じカラー
     }
