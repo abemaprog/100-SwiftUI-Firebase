@@ -1,60 +1,55 @@
-//
-//  SettingView.swift
-//  LoveMemory
-//
-//  Created by Manato Abe on 2024/11/12.
-//
-
 import SwiftUI
-import WebUI //https://github.com/cybozu/webui#readme
+import WebUI
 
 struct SettingView: View {
-    
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var showingAddSheet = false
     
     var body: some View {
-        VStack(spacing: 24) {
-            // カスタムヘッダー
-            CustomHeader(title: "設定", icon: nil, destination: nil)
-            
-            List {
-                // ユーザー情報
-                userInfo
-                // アプリ情報
-                Section("アプリ情報") {
-                    // バージョン
-                    MyPageSectionView(iconname: "info.circle.fill", iconColor: .green, title: "バージョン", subtitle: "\(appVersion)")
-                    //　プライバシーポリシー
-                    WebSectionView(iconname: "shield.fill", iconColor: .purple, title: "プライバシーポリシー", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
-                    // 利用規約
-                    WebSectionView(iconname: "doc.text.fill", iconColor: .gray, title: "利用規約", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
-                }
-                // アカウント
-                Section("アカウント") {
-                    // ログアウト
-                    Button {
-                        authViewModel.logout()
-                    } label: {
-                        MyPageSectionView(iconname: "arrow.left.circle.fill", iconColor: .red, title: "ログアウト", subtitle: nil)
-                    }
-
+        NavigationStack {
+            VStack(spacing: 24) {
+                List {
+                    userInfo
                     
-                    // アカウント削除
-                    Button {
-                        //
-                    } label: {
-                        MyPageSectionView(iconname: "xmark.circle.fill", iconColor: .red, title: "アカウント削除", subtitle: nil)
+                    Section("アプリ情報") {
+                        MyPageSectionView(iconname: "info.circle.fill", iconColor: .green, title: "バージョン", subtitle: "\(appVersion)")
+                        WebSectionView(iconname: "shield.fill", iconColor: .purple, title: "プライバシーポリシー", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
+                        WebSectionView(iconname: "doc.text.fill", iconColor: .gray, title: "利用規約", subtitle: nil, url: URL(string: "https://github.com/abemaprog")!)
                     }
-
+                    
+                    Section("アカウント") {
+                        Button {
+                            authViewModel.logout()
+                        } label: {
+                            MyPageSectionView(iconname: "arrow.left.circle.fill", iconColor: .red, title: "ログアウト", subtitle: nil)
+                        }
+                        
+                        Button {
+                            //
+                        } label: {
+                            MyPageSectionView(iconname: "xmark.circle.fill", iconColor: .red, title: "アカウント削除", subtitle: nil)
+                        }
+                    }
                 }
             }
+            .background(Color(.systemGray6))
+            .navigationTitle("設定")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingAddSheet.toggle()
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                // 追加画面のViewをここに記述
+                UpdateProfileView()
+            }
         }
-        .background(Color(.systemGray6)) //リストのグレーと同じカラー
     }
-}
-
-#Preview {
-    SettingView()
 }
 
 extension SettingView {
@@ -80,11 +75,15 @@ extension SettingView {
         }
     }
     
-    
     private var appVersion: String {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             return "\(version)"
         }
         return "情報が取得できません"
     }
+}
+
+#Preview {
+    SettingView()
+        .environmentObject(AuthViewModel())
 }

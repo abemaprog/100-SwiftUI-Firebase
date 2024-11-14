@@ -1,10 +1,3 @@
-//
-//  FriendView.swift
-//  LoveMemory
-//
-//  Created by Manato Abe on 2024/11/11.
-//
-
 import SwiftUI
 
 struct FriendView: View {

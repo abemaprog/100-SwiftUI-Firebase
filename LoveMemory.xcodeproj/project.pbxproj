@@ -30,6 +30,7 @@
 		15E948572CE49BA300B1D84B /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948562CE49BA300B1D84B /* MyPageSection.swift */; };
 		15E9489E2CE4E11F00B1D84B /* WebUI in Frameworks */ = {isa = PBXBuildFile; productRef = 15E9489D2CE4E11F00B1D84B /* WebUI */; };
 		15E948A02CE4E3FD00B1D84B /* WebSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */; };
+		B3686BA32CE63B13009D92B8 /* UpdateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3686BA22CE63B13009D92B8 /* UpdateProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		15E948542CE3116800B1D84B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		15E948562CE49BA300B1D84B /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
 		15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSectionView.swift; sourceTree = "<group>"; };
+		B3686BA22CE63B13009D92B8 /* UpdateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -155,6 +157,7 @@
 				15E948402CE30F7200B1D84B /* FriendView.swift */,
 				15E948412CE30F7200B1D84B /* ListView.swift */,
 				15E948542CE3116800B1D84B /* SettingView.swift */,
+				B3686BA22CE63B13009D92B8 /* UpdateProfileView.swift */,
 			);
 			path = TabItems;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15E948572CE49BA300B1D84B /* MyPageSection.swift in Sources */,
+				B3686BA32CE63B13009D92B8 /* UpdateProfileView.swift in Sources */,
 				15E948472CE30F7200B1D84B /* LoginView.swift in Sources */,
 				15E948482CE30F7200B1D84B /* RegistrationView.swift in Sources */,
 				15E948492CE30F7200B1D84B /* BasicButton.swift in Sources */,
