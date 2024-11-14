@@ -10,6 +10,7 @@ import WebUI //https://github.com/cybozu/webui#readme
 
 struct SettingView: View {
     
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 24) {
@@ -32,7 +33,7 @@ struct SettingView: View {
                 Section("アカウント") {
                     // ログアウト
                     Button {
-                        
+                        authViewModel.logout()
                     } label: {
                         MyPageSectionView(iconname: "arrow.left.circle.fill", iconColor: .red, title: "ログアウト", subtitle: nil)
                     }

@@ -12,6 +12,7 @@ import FirebaseFirestore
 class AuthViewModel: ObservableObject {
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     // ユーザーがログインしているかどうかを確認する処理
     init() {
@@ -40,7 +41,7 @@ class AuthViewModel: ObservableObject {
         do {
             try Auth.auth().signOut()
             print("ログアウト成功")
-            self.userSession = nil
+            self.resetAccount()
         } catch {
             print("ログアウト失敗: \(error.localizedDescription)")
         }
@@ -74,8 +75,11 @@ class AuthViewModel: ObservableObject {
         } catch {
             print("データ保存失敗: \(error.localizedDescription)")
         }
-        
-        
+    }
+    // ユーザー情報のリセット
+    private func resetAccount() {
+        self.userSession = nil
+        self.currentUser = nil
     }
 }
 

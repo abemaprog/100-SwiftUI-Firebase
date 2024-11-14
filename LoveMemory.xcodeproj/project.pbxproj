@@ -152,8 +152,8 @@
 		15E948432CE30F7200B1D84B /* TabItems */ = {
 			isa = PBXGroup;
 			children = (
-				15E948412CE30F7200B1D84B /* ListView.swift */,
 				15E948402CE30F7200B1D84B /* FriendView.swift */,
+				15E948412CE30F7200B1D84B /* ListView.swift */,
 				15E948542CE3116800B1D84B /* SettingView.swift */,
 			);
 			path = TabItems;
