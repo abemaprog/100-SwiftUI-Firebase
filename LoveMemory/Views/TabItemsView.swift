@@ -15,6 +15,11 @@ struct TabItemsView: View {
                     Image(systemName: "list.bullet.clipboard")
                     Text("リスト")
                 }
+            ChatView()
+                .tabItem {
+                    Image(systemName: "message.fill")
+                    Text("チャット")
+                }
             FriendView()
                 .tabItem {
                     Image(systemName: "person.2.fill")

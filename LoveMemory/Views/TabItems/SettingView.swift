@@ -20,6 +20,7 @@ struct SettingView: View {
             List {
                 // ユーザー情報
                 userInfo
+                
                 // アプリ情報
                 Section("アプリ情報") {
                     // バージョン

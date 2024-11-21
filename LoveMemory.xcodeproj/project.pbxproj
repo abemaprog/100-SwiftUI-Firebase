@@ -30,6 +30,7 @@
 		15E948572CE49BA300B1D84B /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948562CE49BA300B1D84B /* MyPageSection.swift */; };
 		15E9489E2CE4E11F00B1D84B /* WebUI in Frameworks */ = {isa = PBXBuildFile; productRef = 15E9489D2CE4E11F00B1D84B /* WebUI */; };
 		15E948A02CE4E3FD00B1D84B /* WebSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */; };
+		15E948A22CE612B900B1D84B /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948A12CE612B900B1D84B /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		15E948542CE3116800B1D84B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		15E948562CE49BA300B1D84B /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
 		15E9489F2CE4E3FD00B1D84B /* WebSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSectionView.swift; sourceTree = "<group>"; };
+		15E948A12CE612B900B1D84B /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -155,6 +157,7 @@
 				15E948402CE30F7200B1D84B /* FriendView.swift */,
 				15E948412CE30F7200B1D84B /* ListView.swift */,
 				15E948542CE3116800B1D84B /* SettingView.swift */,
+				15E948A12CE612B900B1D84B /* ChatView.swift */,
 			);
 			path = TabItems;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E948A22CE612B900B1D84B /* ChatView.swift in Sources */,
 				15E948572CE49BA300B1D84B /* MyPageSection.swift in Sources */,
 				15E948472CE30F7200B1D84B /* LoginView.swift in Sources */,
 				15E948482CE30F7200B1D84B /* RegistrationView.swift in Sources */,
@@ -416,6 +420,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,6 +451,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

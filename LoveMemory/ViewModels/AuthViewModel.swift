@@ -70,7 +70,7 @@ class AuthViewModel: ObservableObject {
     private func uploadUserData(withUser user: User) async {
         do {
             let userData = try Firestore.Encoder().encode(user) //setDataはString : Any型でなくてはならないため
-            await try Firestore.firestore().collection("user").document(user.id).setData(userData)
+            try await Firestore.firestore().collection("user").document(user.id).setData(userData)
             print("データ保存成功")
         } catch {
             print("データ保存失敗: \(error.localizedDescription)")
