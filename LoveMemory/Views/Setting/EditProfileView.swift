@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct EditProfileView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Color(.systemGray6)
+                    .ignoresSafeArea()
+            }
+            .navigationTitle("プロフィール変更")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("キャンセル") {
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("更新") {
+                        dismiss()
+                    }
+                    
+                }
+            }
+            .font(.subheadline)
+            .foregroundStyle(.primary)
+        }
     }
 }
 

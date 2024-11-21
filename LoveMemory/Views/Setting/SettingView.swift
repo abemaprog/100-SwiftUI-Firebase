@@ -12,6 +12,8 @@ struct SettingView: View {
     
     @EnvironmentObject var authViewModel: AuthViewModel
     
+    @State private var showEditProfileView = false
+    
     var body: some View {
         VStack(spacing: 24) {
             // カスタムヘッダー
@@ -19,8 +21,11 @@ struct SettingView: View {
             
             List {
                 // ユーザー情報
-                userInfo
-                
+                Button {
+                    showEditProfileView.toggle()
+                } label: {
+                    userInfo
+                }
                 // アプリ情報
                 Section("アプリ情報") {
                     // バージョン
@@ -50,6 +55,9 @@ struct SettingView: View {
                 }
             }
         }
+        .sheet(isPresented: $showEditProfileView) {
+            EditProfileView()
+        }
         .background(Color(.systemGray6)) //リストのグレーと同じカラー
     }
 }
@@ -60,7 +68,7 @@ struct SettingView: View {
 
 extension SettingView {
     private var userInfo: some View {
-        Section("ユーザー情報") {
+        Section {
             HStack(spacing: 20) {
                 Image("Me")
                     .resizable()
@@ -72,6 +80,7 @@ extension SettingView {
                     Text("アベ")
                         .font(.subheadline)
                         .fontWeight(.bold)
+                        .foregroundStyle(.black)
                     
                     Text("@abe00")
                         .font(.footnote)
