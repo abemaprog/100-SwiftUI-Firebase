@@ -37,7 +37,7 @@ struct CustomHeader: View {
 
 #Preview {
     VStack {
-        CustomHeader(title: "カスタムヘッダー", icon: Image(systemName: "person.circle"), destination: AnyView(MyPageView()))
+        CustomHeader(title: "カスタムヘッダー", icon: Image(systemName: "person.circle"), destination: AnyView(AddFriendsView()))
         CustomHeader(title: "カスタムヘッダー", icon: nil, destination: nil)
     }
 }

@@ -12,7 +12,7 @@ struct FriendView: View {
         NavigationStack {
             VStack(spacing: 24) {
                 // カスタムヘッダー（プロフィール編集画面に遷移）
-                CustomHeader(title: "友達", icon: Image(systemName: "plus.circle"), destination: AnyView(MyPageView()))
+                CustomHeader(title: "友達", icon: Image(systemName: "plus.circle"), destination: AnyView(AddFriendsView()))
             }
         }
     }

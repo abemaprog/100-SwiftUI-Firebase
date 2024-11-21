@@ -11,6 +11,7 @@ struct User: Encodable {
     let id: String
     let name: String
     let email: String
+    //let bundle: String
     
     var photoUrl: String?
 }
