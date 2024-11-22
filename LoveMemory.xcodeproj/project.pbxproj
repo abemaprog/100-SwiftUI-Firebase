@@ -18,7 +18,6 @@
 		15E948472CE30F7200B1D84B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948372CE30F7200B1D84B /* LoginView.swift */; };
 		15E948482CE30F7200B1D84B /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E948382CE30F7200B1D84B /* RegistrationView.swift */; };
 		15E948492CE30F7200B1D84B /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9483A2CE30F7200B1D84B /* BasicButton.swift */; };
-		15E9484A2CE30F7200B1D84B /* BrandImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9483B2CE30F7200B1D84B /* BrandImage.swift */; };
 		15E9484B2CE30F7200B1D84B /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9483C2CE30F7200B1D84B /* CustomHeader.swift */; };
 		15E9484C2CE30F7200B1D84B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9483D2CE30F7200B1D84B /* InputField.swift */; };
 		15E9484D2CE30F7200B1D84B /* KeyboardDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9483E2CE30F7200B1D84B /* KeyboardDismissModifier.swift */; };
@@ -29,6 +28,9 @@
 		15E9495A2CEF0D3800B1D84B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949562CEF0D3800B1D84B /* EditProfileView.swift */; };
 		15E9495B2CEF0D3800B1D84B /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949572CEF0D3800B1D84B /* MyPageSection.swift */; };
 		15E9495C2CEF0D3800B1D84B /* WebSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949582CEF0D3800B1D84B /* WebSectionView.swift */; };
+		15E949702CEF72E700B1D84B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9496F2CEF72E700B1D84B /* Extensions.swift */; };
+		15E949742CF0541C00B1D84B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949732CF0541C00B1D84B /* CircleView.swift */; };
+		15E949762CF062DE00B1D84B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949752CF062DE00B1D84B /* ForgotPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,6 @@
 		15E948372CE30F7200B1D84B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		15E948382CE30F7200B1D84B /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		15E9483A2CE30F7200B1D84B /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
-		15E9483B2CE30F7200B1D84B /* BrandImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandImage.swift; sourceTree = "<group>"; };
 		15E9483C2CE30F7200B1D84B /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
 		15E9483D2CE30F7200B1D84B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		15E9483E2CE30F7200B1D84B /* KeyboardDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissModifier.swift; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		15E949562CEF0D3800B1D84B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		15E949572CEF0D3800B1D84B /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
 		15E949582CEF0D3800B1D84B /* WebSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSectionView.swift; sourceTree = "<group>"; };
+		15E9496F2CEF72E700B1D84B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		15E949732CF0541C00B1D84B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		15E949752CF062DE00B1D84B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -126,6 +130,7 @@
 				15E946542CDCE27800B1D84B /* LoveMemoryApp.swift */,
 				15E9465D2CDCE2FC00B1D84B /* Models */,
 				15E948462CE30F7200B1D84B /* Views */,
+				15E9496E2CEF72C300B1D84B /* Extensions */,
 				15E946A22CDCE36F00B1D84B /* ViewModels */,
 				15E946522CDCE27800B1D84B /* Assets.xcassets */,
 				15E946512CDCE27800B1D84B /* Preview Content */,
@@ -139,6 +144,8 @@
 			children = (
 				15E948372CE30F7200B1D84B /* LoginView.swift */,
 				15E948382CE30F7200B1D84B /* RegistrationView.swift */,
+				15E949752CF062DE00B1D84B /* ForgotPasswordView.swift */,
+				15E949732CF0541C00B1D84B /* CircleView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -147,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				15E9483A2CE30F7200B1D84B /* BasicButton.swift */,
-				15E9483B2CE30F7200B1D84B /* BrandImage.swift */,
 				15E9483C2CE30F7200B1D84B /* CustomHeader.swift */,
 				15E9483D2CE30F7200B1D84B /* InputField.swift */,
 				15E9483E2CE30F7200B1D84B /* KeyboardDismissModifier.swift */,
@@ -179,6 +185,14 @@
 				15E949582CEF0D3800B1D84B /* WebSectionView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		15E9496E2CEF72C300B1D84B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15E9496F2CEF72E700B1D84B /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,11 +289,13 @@
 				15E948482CE30F7200B1D84B /* RegistrationView.swift in Sources */,
 				15E948492CE30F7200B1D84B /* BasicButton.swift in Sources */,
 				15E948552CE3116800B1D84B /* SettingView.swift in Sources */,
-				15E9484A2CE30F7200B1D84B /* BrandImage.swift in Sources */,
 				15E9495A2CEF0D3800B1D84B /* EditProfileView.swift in Sources */,
 				15E9495B2CEF0D3800B1D84B /* MyPageSection.swift in Sources */,
 				15E9495C2CEF0D3800B1D84B /* WebSectionView.swift in Sources */,
 				15E9484B2CE30F7200B1D84B /* CustomHeader.swift in Sources */,
+				15E949742CF0541C00B1D84B /* CircleView.swift in Sources */,
+				15E949702CEF72E700B1D84B /* Extensions.swift in Sources */,
+				15E949762CF062DE00B1D84B /* ForgotPasswordView.swift in Sources */,
 				15E9484C2CE30F7200B1D84B /* InputField.swift in Sources */,
 				15E9484D2CE30F7200B1D84B /* KeyboardDismissModifier.swift in Sources */,
 				15E948512CE30F7200B1D84B /* ContentView.swift in Sources */,
@@ -343,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -400,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -8,31 +8,52 @@
 import SwiftUI
 
 struct InputField: View {
+    @State private var showPassword: Bool = false
     @Binding var text: String
     
-    let label: String
+    let sfIcon: String
+    let iconTint: Color = .gray
     let placeholder: String
-    var isSecureField = false
-    var withDivider = true
+    var isPassword: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(label)
-                .foregroundStyle(Color.primary)
-                .font(.footnote)
-            if isSecureField {
-                SecureField(placeholder, text: $text)
-            } else {
-                TextField(placeholder, text: $text)
-                    .textInputAutocapitalization(.never)
-            }
-            if withDivider {
+        HStack(alignment: .top, spacing: 8) {
+            Image(systemName: sfIcon)
+                .foregroundStyle(iconTint)
+                .frame(width: 30)
+                .offset(y: 2)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                if isPassword {
+                    Group {
+                        if showPassword {
+                            TextField(placeholder, text: $text)
+                        } else {
+                            SecureField(placeholder, text: $text)
+                        }
+                    }
+                } else {
+                    TextField(placeholder, text: $text)
+                }
                 Divider()
+            }
+            .overlay(alignment: .trailing) {
+                if isPassword {
+                    // パスワードをユーザー自身が確認
+                    Button {
+                        withAnimation{
+                            showPassword.toggle()
+                        }
+                    } label: {
+                        Image(systemName: isPassword ? "eye.slash" : "eye")
+                            .foregroundStyle(iconTint)
+                    }
+                }
             }
         }
     }
 }
 
 #Preview {
-    InputField(text: .constant(""), label: "メールアドレス", placeholder: "入力してください")
+    ContentView()
 }

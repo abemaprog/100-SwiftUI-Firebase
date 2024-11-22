@@ -24,18 +24,16 @@ struct BasicButton: View {
                     Image(systemName: name)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
+            
+            .padding(.vertical, 12)
+            .padding(.horizontal, 25)
             .fontWeight(.bold)
-            .foregroundStyle(.black)
-            .background(Color("CustomGray"))
-            .clipShape(Capsule())
+            .foregroundStyle(.white)
+            .background(Color("CustomGray"), in: .capsule)
         }
     }
 }
 
 #Preview {
-    BasicButton(label: "ボタン") {
-        print("ボタンがタップされました")
-    }
+    ContentView()
 }

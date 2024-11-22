@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Encodable {
+struct User: Encodable, Sendable {
     let id: String
     let name: String
     let email: String

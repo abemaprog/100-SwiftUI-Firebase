@@ -28,9 +28,9 @@ class AuthViewModel: ObservableObject {
     func login(email: String, password: String) async {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            print("ログイン成功: \(result.user.email)")
+            print("ログイン成功: \(result.user.email ?? "不明なメールアドレス"))")
             self.userSession = result.user
-            print("self.userSession: \(self.userSession?.email)")
+            print("self.userSession: \(self.userSession?.email ?? "不明なメールアドレス"))")
         }catch {
             print("ログイン失敗: \(error.localizedDescription)")
         }
