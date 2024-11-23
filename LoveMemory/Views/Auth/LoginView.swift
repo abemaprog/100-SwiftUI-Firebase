@@ -12,6 +12,10 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State private var showForgotPassword:Bool = false
+    @State private var showResetView: Bool = false
+    @State private var optText: String = ""
+    
     @Binding var isLogin: Bool
     
     var body: some View {
@@ -37,7 +41,7 @@ struct LoginView: View {
                     .padding(.top, 5)
                 
                 Button("パスワードをお忘れの方はこちら") {
-                    
+                    showForgotPassword.toggle()
                 }
                 .font(.callout)
                 .fontWeight(.heavy)
@@ -75,6 +79,28 @@ struct LoginView: View {
         .padding(.horizontal, 15)
         .padding(.vertical, 25)
         .toolbar(.hidden, for: .navigationBar)
+        // リセットリンクを送るための依頼
+        .sheet(isPresented: $showForgotPassword) {
+            if #available(iOS 16.4, *) {
+                ForgotPasswordView(authViewModel: authViewModel, showResetView: $showResetView)
+                    .presentationDetents([.height(300)])
+                    .presentationCornerRadius(30)
+            } else {
+                ForgotPasswordView(authViewModel: authViewModel, showResetView: $showResetView)
+                    .presentationDetents([.height(300)])
+            }
+        }
+        // 新しいパスワードにリセット
+        .sheet(isPresented: $showResetView) {
+            if #available(iOS 16.4, *) {
+                ResetPasswordView(authViewModel: authViewModel)
+                    .presentationDetents([.height(350)])
+                    .presentationCornerRadius(30)
+            } else {
+                ResetPasswordView(authViewModel: authViewModel)
+                    .presentationDetents([.height(350)])
+            }
+        }
     }
 }
 

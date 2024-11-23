@@ -1,19 +1,19 @@
 //
-//  ForgotPassWordView.swift
+//  OTPView.swift
 //  LoveMemory
 //
-//  Created by Manato Abe on 2024/11/22.
+//  Created by Manato Abe on 2024/11/23.
 //
 
 import SwiftUI
 
-struct ForgotPasswordView: View {
+struct OTPView: View {
+    
     let authViewModel: AuthViewModel
     
-    @State private var email = ""
-    @Binding var showResetView: Bool
-    
+    @Binding var optText: String
     @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             
@@ -25,31 +25,24 @@ struct ForgotPasswordView: View {
                     .foregroundStyle(.gray)
             }
             .padding(.top, 10)
-
-            Text("パスワードをお忘れですか？")
+            
+            Text("ワンタイムパスワードを入力")
                 .font(.title)
                 .fontWeight(.heavy)
                 .padding(.top, 5)
             
-            Text("パスワードをリセットするために、メールアドレスを入力してください。")
+            Text("6桁の認証コードを入力されたメールアドレスに送信しました")
                 .font(.callout)
                 .fontWeight(.semibold)
                 .foregroundStyle(.gray)
                 .padding(.top, -5)
             
             VStack(spacing: 25) {
-                // メールアドレス
-                InputField(text: $email, sfIcon: "at", placeholder: "メールアドレス")
                 // 新規登録ボタン
                 BasicButton(label: "リンクを送信", icon: "arrow.right") {
-                    Task {
-                        dismiss()
-                        try? await Task.sleep(nanoseconds: 0)
-                        showResetView = true
-                    }
                     
                 }
-                .disableWithOpacity(condition: email.isEmpty)
+                .disableWithOpacity(condition: optText.isEmpty)
                 .hSpacing(alignment: .trailing)
             }
             .padding(.top, 20)
@@ -58,8 +51,8 @@ struct ForgotPasswordView: View {
         .padding(.vertical, 25)
         .interactiveDismissDisabled()
     }
+    
 }
-
 #Preview {
     ContentView()
 }

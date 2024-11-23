@@ -31,6 +31,8 @@
 		15E949702CEF72E700B1D84B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9496F2CEF72E700B1D84B /* Extensions.swift */; };
 		15E949742CF0541C00B1D84B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949732CF0541C00B1D84B /* CircleView.swift */; };
 		15E949762CF062DE00B1D84B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949752CF062DE00B1D84B /* ForgotPasswordView.swift */; };
+		15E9497A2CF1889C00B1D84B /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E949792CF1889C00B1D84B /* ResetPasswordView.swift */; };
+		15E9497E2CF1933D00B1D84B /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9497D2CF1933D00B1D84B /* OTPView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		15E9496F2CEF72E700B1D84B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		15E949732CF0541C00B1D84B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		15E949752CF062DE00B1D84B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		15E949792CF1889C00B1D84B /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		15E9497D2CF1933D00B1D84B /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -145,7 +149,8 @@
 				15E948372CE30F7200B1D84B /* LoginView.swift */,
 				15E948382CE30F7200B1D84B /* RegistrationView.swift */,
 				15E949752CF062DE00B1D84B /* ForgotPasswordView.swift */,
-				15E949732CF0541C00B1D84B /* CircleView.swift */,
+				15E949792CF1889C00B1D84B /* ResetPasswordView.swift */,
+				15E9497D2CF1933D00B1D84B /* OTPView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				15E9483C2CE30F7200B1D84B /* CustomHeader.swift */,
 				15E9483D2CE30F7200B1D84B /* InputField.swift */,
 				15E9483E2CE30F7200B1D84B /* KeyboardDismissModifier.swift */,
+				15E949732CF0541C00B1D84B /* CircleView.swift */,
 			);
 			path = Coponents;
 			sourceTree = "<group>";
@@ -292,8 +298,10 @@
 				15E9495A2CEF0D3800B1D84B /* EditProfileView.swift in Sources */,
 				15E9495B2CEF0D3800B1D84B /* MyPageSection.swift in Sources */,
 				15E9495C2CEF0D3800B1D84B /* WebSectionView.swift in Sources */,
+				15E9497A2CF1889C00B1D84B /* ResetPasswordView.swift in Sources */,
 				15E9484B2CE30F7200B1D84B /* CustomHeader.swift in Sources */,
 				15E949742CF0541C00B1D84B /* CircleView.swift in Sources */,
+				15E9497E2CF1933D00B1D84B /* OTPView.swift in Sources */,
 				15E949702CEF72E700B1D84B /* Extensions.swift in Sources */,
 				15E949762CF062DE00B1D84B /* ForgotPasswordView.swift in Sources */,
 				15E9484C2CE30F7200B1D84B /* InputField.swift in Sources */,

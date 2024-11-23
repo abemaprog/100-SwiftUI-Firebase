@@ -20,7 +20,15 @@ struct RegistrationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             
-            Spacer()
+            Button {
+                isLogin = false
+            } label: {
+                Image(systemName: "arrow.left")
+                    .font(.title2)
+                    .foregroundStyle(.gray)
+            }
+            .padding(.top, 50)
+            
             Text("新規登録")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
